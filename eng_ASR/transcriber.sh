@@ -6,13 +6,14 @@ outdir=$3
 resourcedir=$4
 
 cd $resourcedir
+suffix=$(LC_CTYPE=C tr -d -c '[:alnum:]' </dev/urandom | head -c 15)
 for inputfile in $inputdir/*; do
 
   filename=$(basename "$inputfile")
   extension="${filename##*.}"
   file_id=$(basename "$inputfile" .$extension)
   sox $inputfile -e signed-integer -c 1 -r 16000 -b 16 $scratchdir/${file_id}.wav
-  recog_dir_name=${file_id}_$(date +"%y_%m_%d_%H_%m_%S")
+  recog_dir_name=${file_id}_${suffix}
   target_dir=$scratchdir/${recog_dir_name}
   mkdir -p $target_dir
 
