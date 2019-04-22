@@ -1,0 +1,4 @@
+root: "/vol/tensusers/eyilmaz/webservices/writable/eng_ASR"
+resourcedirectory: "/vol/tensusers/eyilmaz/webservices/writable/eng_ASR/resources"
+scratchdirectory: "/vol/tensusers/eyilmaz/webservices/writable/eng_ASR/scratch"
+port: 8802

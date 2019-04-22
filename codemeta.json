@@ -1,0 +1,64 @@
+{
+    "@context": [
+        "https://doi.org/10.5063/schema/codemeta-2.0",
+        "http://schema.org",
+        {
+            "entryPoints": { "@reverse": "schema:actionApplication" },
+            "interfaceType": { "@id": "codemeta:interfaceType" }
+        }
+    ],
+    "@type": "SoftwareSourceCode",
+    "identifier": "eng_ASR",
+    "name": "Frisian-Dutch Automatic Speech Recognition",
+    "version": "0.1",
+    "description": "This webservice uses the English automatic speech recognition system developed at the University of Twente.",
+    "license": "unknown",
+	"url": "https://github.com/schemreier/eng_ASR",
+    "producer": {
+        "@id": "https://www.ru.nl/clst",
+        "@type": "Organization",
+        "name": "Centre for Language and Speech Technology",
+        "url": "https://www.ru.nl/clst",
+        "parentOrganization": {
+            "@id": "https://www.ru.nl/cls",
+            "@type": "Organization",
+            "name": "Centre for Language Studies",
+            "url": "https://www.ru.nl/cls",
+            "parentOrganization": {
+                "@id": "https://www.ru.nl",
+                "name": "Radboud University",
+                "@type": "Organization",
+                "url": "https://www.ru.nl",
+                "location": {
+                    "@type": "Place",
+                    "name": "Nijmegen"
+                }
+            }
+
+        }
+    },
+    "author": [
+		{
+			"@type": "Person",
+			"givenName": "Emre",
+			"familyName": "Yılmaz",
+			"email": "emre.yilmaz@let.ru.nl",
+			"affiliation": { "@id": "https://www.ru.nl/clst" }
+		}
+	],
+	"sourceOrganization": { "@id": "https://www.ru.nl/clst" },
+	"operatingSystem": "POSIX",
+	"codeRepository": "https://github.com/schemreier/eng_ASR",
+    "softwareRequirements": [
+        {
+			"@type": "SoftwareApplication",
+			"identifier": "kaldi",
+			"name": "kaldi"
+		}
+	],
+	"readme": "https://github.com/schemreier/eng_ASR/blob/master/README.md",
+	"issueTracker": "https://github.com/schemreier/eng_ASR/issues",
+	"developmentStatus": "active",
+	"keywords":  [ "nlp", "speech recognition", "dutch" ],
+	"dateCreated": "2018-05-17"
+}
