@@ -17,7 +17,7 @@ for inputfile in $inputdir/*; do
   target_dir=$scratchdir/${recog_dir_name}
   mkdir -p $target_dir
 
-  ./recognize.sh $scratchdir/${file_id}.wav $target_dir
+  ./recognize.sh $scratchdir/${file_id}.wav $target_dir || exit 1;
   cp $target_dir/${recog_dir_name}.txt $outdir/${file_id}.txt
   cp $target_dir/${recog_dir_name}.ctm $outdir/${file_id}.ctm
   ./scripts/ctm2xml.py $outdir $file_id $scratchdir
