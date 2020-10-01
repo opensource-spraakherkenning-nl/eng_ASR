@@ -31,7 +31,7 @@ import sys
 import os
 from base64 import b64decode as D
 
-REQUIRE_VERSION = 2.2
+REQUIRE_VERSION = 3.0
 
 CLAMDIR = clam.__path__[0] #directory where CLAM is installed, detected automatically
 WEBSERVICEDIR = os.path.dirname(os.path.abspath(__file__)) #directory where this webservice is installed, detected automatically
@@ -48,6 +48,14 @@ SYSTEM_NAME = "English Automatic Speech Recognition System"
 
 #An informative description for this system (this should be fairly short, about one paragraph, and may not contain HTML)
 SYSTEM_DESCRIPTION = "This webservice uses automatic speech recognition to provide the transcriptions of recordings spoken in English recordings. You can upload and process only one file per project. For bulk processing and other questions, please contact Henk van den Heuvel at h.vandenheuvel@let.ru.nl."
+
+SYSTEM_AUTHOR = "Emre Yilmaz"
+
+SYSTEM_AFFILIATION = "Centre for Language and Speech Technology, Radboud University"
+
+SYSTEM_URL = "https://github.com/schemreier/oralhistory"
+
+SYSTEM_EMAIL = "h.vandenheuvel@let.ru.nl"
 
 INTERFACEOPTIONS = "disableliveinput"
 

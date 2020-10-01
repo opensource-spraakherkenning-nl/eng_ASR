@@ -33,5 +33,5 @@ setup(
     ],
     package_data = {'eng_ASR':['*.sh','*.wsgi','*.yml'] },
     include_package_data=True,
-    install_requires=['CLAM >= 2.3']
+    install_requires=['CLAM >= 3.0']
 )
