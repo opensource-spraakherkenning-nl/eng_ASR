@@ -6,7 +6,7 @@ outdir=$3
 resourcedir=$4
 
 fatalerror() {
-    echo "-----------------------------------------------------------------------" >&2
+    echo "------------------------transcriber.sh---------------------------------" >&2
     echo "FATAL ERROR: $*" >&2
     echo "-----------------------------------------------------------------------" >&2
     rm $scratchdir/${file_id}.wav 2>/dev/null
@@ -45,16 +45,29 @@ for inputfile in $inputdir/*; do
   extension="${filename##*.}"
   file_id=$(basename "$inputfile").$extension
   sox $inputfile -e signed-integer -c 1 -r 16000 -b 16 "$scratchdir/${file_id}.wav" || fatalerror "sox failed"
-  recog_dir_name="${file_id}_${suffix}"
-  target_dir="$scratchdir/${recog_dir_name}"
-  mkdir -p "$target_dir"
+  target_dir=$scratchdir/${file_id}_$(date +"%y_%m_%d_%H_%M_%S_%N")
+  mkdir -p $target_dir || fatalerror "Unable to create temporary working directory $target_dir"
 
-  ./recognize.sh "$scratchdir/${file_id}.wav" "$target_dir" || fatalerror "Recognizer failed";
-  cp "$target_dir/${recog_dir_name}.txt" "$outdir/${file_id}.txt" || fatalerror "expected txt output not found"
-  cp "$target_dir/${recog_dir_name}.ctm" "$outdir/${file_id}.ctm" || fatalerror "expected ctm output not found"
+  ./recognize.sh "$scratchdir/${file_id}.wav" "$target_dir" || fatalerror "Decoding failed"
+
+  if [ ! -f $target_dir/${file_id}.txt ]; then
+      fatalerror "Expected target file $target_dir/${file_id}.txt not found after decoding!"
+  fi
+
+  if [ ! -f $target_dir/1Best.ctm ]; then
+      fatalerror "Expected CTM file $target_dir/1Best.ctm not found after decoding!"
+  fi
+
+  cp "$target_dir/${file_id}.txt" "$outdir/${file_id}.txt"
+  cp $target_dir/1Best.ctm $outdir/${file_id}.ctm
   ./scripts/ctm2xml.py "$outdir" "$file_id" "$scratchdir" || fatalerror "ctm2xml failed"
   ./scripts/ctm2tg.py "$outdir/${file_id}.ctm" "$scratchdir/${file_id}.wav" || fatalerror "ctm2tg failed"
   rm -f "$scratchdir/${file_id}.wav"
+
+  #cleanup
+  #echo "(cleaning intermediate files)">&2
+  #rm $scratchdir/${file_id}.wav 2>/dev/null
+  #rm -Rf $target_dir
 
 done
 cd -
