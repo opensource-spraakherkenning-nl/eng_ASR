@@ -102,12 +102,17 @@ STYLE = 'classic'
 #In CUSTOM_FORMATS you can specify a list of Python classes corresponding to extra formats.
 #You can define the classes first, and then put them in CUSTOM_FORMATS, as shown in this example:
 
-#class MyXMLFormat(CLAMMetaData):
-#    attributes = {}
-#    name = "My XML format"
-#    mimetype = 'text/xml'
+class CTMFormat(CLAMMetaData):
+    attributes = {}
+    name = "Conversation Time Marked File"
+    mimetype = "text/plain"
 
-# CUSTOM_FORMATS = [ MyXMLFormat ]
+class TextGridFormat(CLAMMetaData):
+    attributes = {}
+    name = "Praat Textgrid"
+    mimetype = "text/plain"
+
+CUSTOM_FORMATS = [ CTMFormat ]
 
 # ======= INTERFACE OPTIONS ===========
 
@@ -145,6 +150,27 @@ PROFILES = [
             #filename='filename.stats',
             multi=True
         ),
+        OutputTemplate('TranscriptionCTM',CTMFormat,'Automatic transcription of the input recording with timestamps (CTM)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".wav",
+            extension='.ctm', #set an extension or set a filename:
+            #filename='filename.stats',
+            multi=True
+        ),
+        OutputTemplate('TranscriptionXML', XMLFormat,'Automatic transcription of the input recording (full data) (AudioDoc XML)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".wav",
+            extension='.xml', #set an extension or set a filename:
+            #filename='filename.stats',
+            multi=True
+        ),
+        OutputTemplate('TranscriptionTG', TextGridFormat,'Automatic transcription of the input recording (full data) (Praat Textgrid)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".wav",
+            extension='.tg', #set an extension or set a filename:
+            #filename='filename.stats',
+            multi=True
+        )
     ),
     #------------------------------------------------------------------------------------------------------------------------
     Profile(
@@ -167,6 +193,27 @@ PROFILES = [
             #filename='filename.stats',
             multi=True
         ),
+        OutputTemplate('TranscriptionCTM',CTMFormat,'Automatic transcription of the input recording with timestamps (CTM)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".mp3",
+            extension='.ctm', #set an extension or set a filename:
+            #filename='filename.stats',
+            multi=True
+        ),
+        OutputTemplate('TranscriptionXML', XMLFormat,'Automatic transcription of the input recording (full data) (AudioDoc XML)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".mp3",
+            extension='.xml', #set an extension or set a filename:
+            #filename='filename.stats',
+            multi=True
+        ),
+        OutputTemplate('TranscriptionTG', TextGridFormat,'Automatic transcription of the input recording (full data) (Praat Textgrid)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".mp3",
+            extension='.tg', #set an extension or set a filename:
+            #filename='filename.stats',
+            multi=True
+        )
     ),
     #------------------------------------------------------------------------------------------------------------------------
     Profile(
@@ -189,6 +236,25 @@ PROFILES = [
             #filename='filename.stats',
             multi=True
         ),
+        OutputTemplate('TranscriptionCTM',CTMFormat,'Automatic transcription of the input recording with timestamps (CTM)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".ogg",
+            extension='.ctm', #set an extension or set a filename:
+            multi=True
+        ),
+        OutputTemplate('TranscriptionXML', XMLFormat,'Automatic transcription of the input recording (full data) (AudioDoc XML)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".ogg",
+            extension='.xml', #set an extension or set a filename:
+            multi=True
+        ),
+        OutputTemplate('TranscriptionTG', TextGridFormat,'Automatic transcription of the input recording (full data) (Praat Textgrid)',
+            SetMetaField('encoding','utf-8'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".ogg",
+            extension='.tg', #set an extension or set a filename:
+            #filename='filename.stats',
+            multi=True
+        )
     )
 
 ]
