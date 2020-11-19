@@ -44,7 +44,7 @@ for inputfile in $inputdir/*; do
   echo "Processing $filename">&2
   extension="${filename##*.}"
   file_id=$(basename "$inputfile")
-  file_id="{$file_id%*.}"
+  file_id="${file_id%*.}"
   sox "$inputfile" -e signed-integer -c 1 -r 16000 -b 16 "$scratchdir/${file_id}.wav" >&2 || fatalerror "sox failed"
   if [ ! -f "$scratchdir/${file_id}.wav"  ]; then
       fatalerror "Expected file $scratchdir/${file_id}.wav not found after reencoding!"
