@@ -140,6 +140,7 @@ PROFILES = [
         #------------------------------------------------------------------------------------------------------------------------
         OutputTemplate('Transcription',PlainTextFormat,'Automatic transcription of the input recording',
             SetMetaField('encoding','ascii'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".wav",
             extension='.txt', #set an extension or set a filename:
             #filename='filename.stats',
             multi=True
@@ -161,6 +162,7 @@ PROFILES = [
         #------------------------------------------------------------------------------------------------------------------------
         OutputTemplate('Transcription',PlainTextFormat,'Automatic transcription of the input recording',
             SetMetaField('encoding','ascii'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".mp3",
             extension='.txt', #set an extension or set a filename:
             #filename='filename.stats',
             multi=True
@@ -182,6 +184,7 @@ PROFILES = [
         #------------------------------------------------------------------------------------------------------------------------
         OutputTemplate('Transcription',PlainTextFormat,'Automatic transcription of the input recording',
             SetMetaField('encoding','ascii'), #note that encoding is required if you work with PlainTextFormat
+            removeextension=".ogg",
             extension='.txt', #set an extension or set a filename:
             #filename='filename.stats',
             multi=True
