@@ -10,10 +10,10 @@
     "@type": "SoftwareSourceCode",
     "identifier": "eng_ASR",
     "name": "English Automatic Speech Recognition",
-    "version": "0.1",
+    "version": "0.2",
     "description": "This webservice uses the English automatic speech recognition system developed at the University of Twente.",
     "license": "unknown",
-	"url": "https://github.com/schemreier/eng_ASR",
+	"url": "https://github.com/opensource-spraakherkenning-nl/eng_ASR",
     "producer": {
         "@id": "https://www.ru.nl/clst",
         "@type": "Organization",
@@ -48,7 +48,7 @@
 	],
 	"sourceOrganization": { "@id": "https://www.ru.nl/clst" },
 	"operatingSystem": "POSIX",
-	"codeRepository": "https://github.com/schemreier/eng_ASR",
+	"codeRepository": "https://github.com/opensource-spraakherkenning-nl/eng_ASR",
     "softwareRequirements": [
         {
 			"@type": "SoftwareApplication",
@@ -56,8 +56,8 @@
 			"name": "kaldi"
 		}
 	],
-	"readme": "https://github.com/schemreier/eng_ASR/blob/master/README.md",
-	"issueTracker": "https://github.com/schemreier/eng_ASR/issues",
+	"readme": "https://github.com/opensource-spraakherkenning-nl/eng_ASR/blob/master/README.md",
+	"issueTracker": "https://github.com/opensource-spraakherkenning-nl/eng_ASR/issues",
 	"developmentStatus": "active",
 	"keywords":  [ "nlp", "speech recognition", "dutch" ],
 	"dateCreated": "2018-05-17"

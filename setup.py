@@ -12,13 +12,13 @@ def read(fname):
 
 setup(
     name = "eng_ASR",
-    version = "0.1",
-    author = "",
-    author_email = "",
+    version = "0.2",
+    author = "Emre Yılmaz",
+    author_email = "emre@nus.edu.sg",
     description = ("English Automatic Speech Recognition Webservice"),
-    license = "unknown",
+    license = "AGPL3",
     keywords = "clam webservice rest nlp computational_linguistics rest",
-    url = "https://github.com/schemreier/eng_ASR",
+    url = "https://github.com/opensource-spraakherkenning-nl/eng_ASR",
     packages=['eng_ASR'],
     long_description=read('README.md'),
     classifiers=[

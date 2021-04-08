@@ -51,9 +51,11 @@ SYSTEM_DESCRIPTION = "This webservice uses automatic speech recognition to provi
 
 SYSTEM_AUTHOR = "Emre Yilmaz"
 
+SYSTEM_VERSION = "0.2"
+
 SYSTEM_AFFILIATION = "Centre for Language and Speech Technology, Radboud University"
 
-SYSTEM_URL = "https://github.com/schemreier/oralhistory"
+SYSTEM_URL = "https://github.com/opensource-spraakherkenning-nl/eng_ASR"
 
 SYSTEM_EMAIL = "h.vandenheuvel@let.ru.nl"
 
