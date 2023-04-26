@@ -9,8 +9,8 @@ fatalerror() {
     echo "------------------------transcriber.sh---------------------------------" >&2
     echo "FATAL ERROR: $*" >&2
     echo "-----------------------------------------------------------------------" >&2
-    rm $scratchdir/${file_id}.wav 2>/dev/null
-    if [ ! -z "$target_dir" ]; then
+    rm "$scratchdir/$file_id.wav" 2>/dev/null
+    if [ -n "$target_dir" ]; then
         echo "PATH=$PATH" >&2
         echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" >&2
         echo "KALDI_ROOT=$KALDI_ROOT" >&2
@@ -31,13 +31,13 @@ fatalerror() {
         echo "[End of kaldi decode logs]" >&2
         if [ ! -z "$debug" ]; then
             echo "(cleaning intermediate files after error)">&2
-            rm -Rf $target_dir
+            rm -Rf "$target_dir"
         fi
     fi
     exit 2
 }
 
-cd $resourcedir
+cd $resourcedir || fatalerror "Resource directory '$resourcedir' not found"
 suffix=$(LC_CTYPE=C tr -d -c '[:alnum:]' </dev/urandom | head -c 15)
 for inputfile in $inputdir/*; do
   filename=$(basename "$inputfile")
