@@ -21,7 +21,7 @@ scratchdirectory: "{{CLAM_ROOT=/tmp}}/eng_asr-userdata/scratch/"
 
 # HTTP Basic Authentication via a simple TSV file (disabled by default)
 users_file: "{{CLAM_USERS_FILE}}"
-realm: "{{CLAM_REALM={sys_id}}}"
+realm: "{{CLAM_REALM=eng_ASR}}"
 
 #Interface customisation
 customhtml_index: "{{CLAM_CUSTOMHTML_INDEX}}"
