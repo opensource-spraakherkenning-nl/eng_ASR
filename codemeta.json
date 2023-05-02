@@ -10,7 +10,7 @@
     "@type": "SoftwareSourceCode",
     "identifier": "eng_ASR",
     "name": "English Automatic Speech Recognition",
-    "version": "0.2",
+    "version": "0.2.2",
     "description": "This webservice uses the English automatic speech recognition system developed at the University of Twente.",
     "license": "unknown",
 	"url": "https://github.com/opensource-spraakherkenning-nl/eng_ASR",
@@ -44,8 +44,22 @@
 			"familyName": "Yılmaz",
 			"email": "emre.yilmaz@let.ru.nl",
 			"affiliation": { "@id": "https://www.ru.nl/clst" }
-		}
+		},
+		{
+			"@type": "Person",
+			"givenName": "Maarten",
+			"familyName": "van Gompel",
+			"email": "proycon@anaproy.nl",
+			"affiliation": { "@id": "https://www.ru.nl/clst" }
+		},
 	],
+    "maintainer": {
+        "@type": "Person",
+        "givenName": "Maarten",
+        "familyName": "van Gompel",
+        "email": "proycon@anaproy.nl",
+        "affiliation": { "@id": "https://www.ru.nl/clst" }
+    },
 	"sourceOrganization": { "@id": "https://www.ru.nl/clst" },
 	"operatingSystem": "POSIX",
 	"codeRepository": "https://github.com/opensource-spraakherkenning-nl/eng_ASR",
