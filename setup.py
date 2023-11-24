@@ -12,7 +12,7 @@ def read(fname):
 
 setup(
     name = "eng_ASR",
-    version = "0.2.2",
+    version = "0.2.3",
     author = "Emre Yılmaz",
     author_email = "emre@nus.edu.sg",
     description = ("English Automatic Speech Recognition Webservice"),

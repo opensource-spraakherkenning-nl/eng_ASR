@@ -51,7 +51,7 @@ SYSTEM_DESCRIPTION = "This webservice uses automatic speech recognition to provi
 
 SYSTEM_AUTHOR = "Emre Yilmaz"
 
-SYSTEM_VERSION = "0.2.1"
+SYSTEM_VERSION = "0.2.3"
 
 SYSTEM_AFFILIATION = "Centre for Language and Speech Technology, Radboud University"
 
